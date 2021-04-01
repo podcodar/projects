@@ -26,7 +26,7 @@ usuário entrar com o valor de `R$ 11.36` o programa deverá demonstrar na `<div
 
 Para te ajudar montamos a seguinte interface padrão:
 
-![Base design](./../../docs/images/base.png)
+![Base design](https://github.com/podcodar/projects/blob/feat/base-setup-and-conversor/docs/images/base.png)
 
 Siga-a como uma guia, porém não é necessário que o design dos elementos esteja perfeitamente igual ao da foto. Considere apenas ter os memos "componentes" (Um header com texto informativo, um insert para o valor escolhido pelo usuário, um botão de conversão e uma `div` para resposta)
 
@@ -55,7 +55,7 @@ estilizar nossa aplicação, para isto vamos utilizar alguns componentes básico
 
 O design a seguir apresenta uma demonstração de como deve ficar a página:
 
-![Conversor Bootstrap](./../../docs/images/conversorv1.png)
+![Conversor Bootstrap](https://github.com/podcodar/projects/blob/feat/base-setup-and-conversor/docs/images/conversorv1.png)
 
 Perceba que o design ainda se assemelha muito ao exercício anterior com algumas variações:
 
@@ -163,7 +163,7 @@ Nesta nova rodada vamos adaptar nosso `CSS` e deixar a aplicação que desenvolv
 Para isto, utilize os padrões de `flex-box` ou `grid` para criar regras onde, caso seu site seja aberto em um celular sua visualização fique da seguinte
 forma:
 
-![Conversor Mobile](../../docs/images/conversorMobile.png)
+![Conversor Mobile](https://github.com/podcodar/projects/blob/feat/base-setup-and-conversor/docs/images/conversorMobile.png)
 
 > O [css-tricks guides](https://css-tricks.com/guides/) tem ótimas referências para estes padrões!
 
