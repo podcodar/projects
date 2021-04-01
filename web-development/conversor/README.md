@@ -30,7 +30,7 @@ Para te ajudar montamos a seguinte interface padrão:
 
 Siga-a como uma guia, porém não é necessário que o design dos elementos esteja perfeitamente igual ao da foto. Considere apenas ter os memos "componentes" (Um header com texto informativo, um insert para o valor escolhido pelo usuário, um botão de conversão e uma `div` para resposta)
 
-Neste passo, ainda não é necessário escrever código `Javascript`, apenas que tenha um desing pronto como o demonstrado acima.
+Neste passo, ainda não é necessário escrever código `Javascript`, apenas que tenha um design pronto como o demonstrado acima.
 
 ### 3 - Fazendo um conversor estático
 
