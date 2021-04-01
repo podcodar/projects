@@ -16,6 +16,12 @@ Para este projeto você irá precisar apenas de um browser atualizado (sugerimos
 
 Certifique-se de que consegue ver a aplicação rodando em seu browser, para isto execute o file `index.html` com o **Chrome**.
 
+#### Publicando no Github Pages
+
+Vamos utilizar uma ferramenta gratuita do github que permite publicar sua aplicação para que outras pessoas possam utilizar seu conversor!
+
+Siga [este tutorial](https://docs.github.com/pt/github/working-with-github-pages/creating-a-github-pages-site) e já deixei seu repositório configurado para fazer este exercício!
+
 ### 2 - Primeiros componentes visuais
 
 Agora que você já testou o setup básico do projeto seu objetivo é desenvolver um comversor que, a partir da entrada do usuário converte o valor inserido de
@@ -97,7 +103,7 @@ Seu código agora deverá também avaliar quais são as moedas selecionadas pelo
 
 ### 6 - Tornando o conversor dinâmico
 
-Um problema claro com a aplicação que fizemos até o momento é o valor constante das cotações uma vez que sabemos que cotações de moedas variam bastante com o tempo. Logo rapidamente nosso site perde sua funcionalidade e passa a ser muito custoso de ser mantido (com 3 cotações talvez seja até mais fácil, agora imagine 50 moedas!). Para resolver este problema vamos utilizar um serviço externo, que vai nos informar em tempo real qual a cotação entre duas moedas.
+Um problema claro com a aplicação que fizemos até o momento é o valor constante das cotações, uma vez que sabemos que cotações de moedas variam bastante com o tempo. Logo, rapidamente nosso site perde sua funcionalidade e passa a ser muito custoso de ser mantido (com 3 cotações talvez seja até mais fácil, agora imagine 50 moedas!). Para resolver este problema, vamos utilizar um serviço externo (API), que vai nos informar em tempo real qual a cotação entre duas moedas.
 
 Utilizando a [Exchange Rates API](https://exchangeratesapi.io/), uma API onde podemos gratuitamente verificar cotações, vamos pegar os valores atualizados antes de calcular o resultado a ser demonstrado. Veja no exemplo a seguir como pegar os dados:
 
@@ -154,7 +160,7 @@ const pegaTaxaDeConversao = async () => {
 Uma vez vinculado a API oque você pode fazer para complexificar e expandir seu projeto?
 
 - Extender a lista de conversão
-- Fornecer mais informações relacionadas a cotações
+- Fornecer mais informações relacionadas a cotações (informações em tempo real, comparação imediata com outras moedas, a documentação pode te dar novas idéias!)
 - Adaptar a interface com novas funcionalidades (setas trocam a ordem das moedas selecionadas, demonstrar mais de um valor ao mesmo tempo, etc...)
 
 ### 7 - Responsividade
@@ -166,9 +172,3 @@ forma:
 ![Conversor Mobile](https://github.com/podcodar/projects/blob/feat/base-setup-and-conversor/docs/images/conversorMobile.png)
 
 > O [css-tricks guides](https://css-tricks.com/guides/) tem ótimas referências para estes padrões!
-
-### 6 Publicando no Github Pages
-
-Agora com a aplicação finalizada, vamos publicá-la para que outras pessoas possam utilizar seu conversor!
-
-Crie uma cópia de sua resolução aqui e a coloque em um novo repositório público no Github, para mais informações siga [este tutorial](https://docs.github.com/pt/github/working-with-github-pages/creating-a-github-pages-site).
