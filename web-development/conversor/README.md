@@ -20,7 +20,7 @@ Certifique-se de que consegue ver a aplicação rodando em seu browser, para ist
 
 Vamos utilizar uma ferramenta gratuita do github que permite publicar sua aplicação para que outras pessoas possam utilizar seu conversor!
 
-Siga [este tutorial](https://docs.github.com/pt/github/working-with-github-pages/creating-a-github-pages-site) e já deixei seu repositório configurado para fazer este exercício!
+Siga [este tutorial](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) e já deixei seu repositório configurado para fazer este exercício!
 
 ### 2 - Primeiros componentes visuais
 
