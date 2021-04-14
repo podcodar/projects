@@ -105,9 +105,13 @@ Seu código agora deverá também avaliar quais são as moedas selecionadas pelo
 
 Um problema claro com a aplicação que fizemos até o momento é o valor constante das cotações, uma vez que sabemos que cotações de moedas variam bastante com o tempo. Logo, rapidamente nosso site perde sua funcionalidade e passa a ser muito custoso de ser mantido (com 3 cotações talvez seja até mais fácil, agora imagine 50 moedas!). Para resolver este problema, vamos utilizar um serviço externo (API), que vai nos informar em tempo real qual a cotação entre duas moedas.
 
-Utilizando a [Exchange Rates API](https://exchangeratesapi.io/), uma API onde podemos gratuitamente verificar cotações, vamos pegar os valores atualizados antes de calcular o resultado a ser demonstrado. Veja no exemplo a seguir como pegar os dados:
+
 
 #### Utilizando a API
+
+#Atenção: a a Api mudou a forma como costumavamos pegar estes dados portanto ao inves de usar https://exchangeratesapi.io/, começe a usar o endereço https://free.currconv.com/api/v7/convert?q=brl_usd&compact=ultra&apiKey=X para pegar estes dados. Onde 'X' é o número da sua nova API KEY.
+
+Utilizando a [Exchange Rates API](https://exchangeratesapi.io/), uma API onde podemos gratuitamente verificar cotações, vamos pegar os valores atualizados antes de calcular o resultado a ser demonstrado. Veja no exemplo a seguir como pegar os dados:
 
 Para a acessar a API vamos utilizar a **URL** do site e parametrizála para nossas necessidades
 
