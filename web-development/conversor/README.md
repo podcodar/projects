@@ -82,19 +82,19 @@ Para simpificar vamos deixar aqui o objeto que possui todas as relações de con
 
 ```javascript
 const cotacoes = {
-    "USD": {
-        "BRL": 5.6856501497,
-        "EUR": 0.8313934154,
-    },
-    "BRL": {
-        "EUR": 0.146226622,
-        "USD": 0.175881381,
-    },
-    "EUR": {
-        "BRL": 6.8387,
-        "USD": 1.2028,
-    }
-}
+  USD: {
+    BRL: 5.6856501497,
+    EUR: 0.8313934154,
+  },
+  BRL: {
+    EUR: 0.146226622,
+    USD: 0.175881381,
+  },
+  EUR: {
+    BRL: 6.8387,
+    USD: 1.2028,
+  },
+};
 ```
 
 Logo se o usuário selecionar a conversão de Real -> Dolar o nosso valor de conversão será `cotacoes['BRL']['USD'] == 0.175881381`. Assim é possível calcular o valor de uma determinada quantia de dinheiro de quaquer moeda para outra!
@@ -105,19 +105,15 @@ Seu código agora deverá também avaliar quais são as moedas selecionadas pelo
 
 Um problema claro com a aplicação que fizemos até o momento é o valor constante das cotações, uma vez que sabemos que cotações de moedas variam bastante com o tempo. Logo, rapidamente nosso site perde sua funcionalidade e passa a ser muito custoso de ser mantido (com 3 cotações talvez seja até mais fácil, agora imagine 50 moedas!). Para resolver este problema, vamos utilizar um serviço externo (API), que vai nos informar em tempo real qual a cotação entre duas moedas.
 
-
-
 #### Utilizando a API
 
-#Atenção: a a Api mudou a forma como costumavamos pegar estes dados portanto ao inves de usar https://exchangeratesapi.io/, começe a usar o endereço https://free.currconv.com/api/v7/convert?q=brl_usd&compact=ultra&apiKey=X para pegar estes dados. Onde 'X' é o número da sua nova API KEY.
-
-Utilizando a [Exchange Rates API](https://exchangeratesapi.io/), uma API onde podemos gratuitamente verificar cotações, vamos pegar os valores atualizados antes de calcular o resultado a ser demonstrado. Veja no exemplo a seguir como pegar os dados:
+Utilizando a [exchangerate.host](https://exchangerate.host/#/docs), uma API onde podemos gratuitamente verificar cotações, vamos pegar os valores atualizados antes de calcular o resultado a ser demonstrado. Veja no exemplo a seguir como pegar os dados:
 
 Para a acessar a API vamos utilizar a **URL** do site e parametrizála para nossas necessidades
 
 ```bash
 # Endereço base da API
-curl "https://api.exchangeratesapi.io/latest"
+curl "https://api.exchangerate.host/latest"
 
 # ?               -> Início da passagem de parametros
 # symbols=USD,BRL -> Lista de moedas a serem retornadas na comparação
@@ -125,37 +121,43 @@ curl "https://api.exchangeratesapi.io/latest"
 # base=EUR        -> Moeda base de cálculo
 
 # Obter taxa de conversão para dólar e reais a partir do euro
-curl "https://api.exchangeratesapi.io/latest?symbols=USD,BRL&base=EUR"
+curl "https://api.exchangerate.host/latest?symbols=USD,BRL&base=EUR"
 ```
 
 Caso você tenha um terminal com o programa `curl` instalado, pode copiar e executar os comandos abaixo:
 
 ```bash
 
-curl "https://api.exchangeratesapi.io/latest?symbols=USD&base=EUR"
+curl "https://api.exchangerate.host/latest?symbols=USD&base=EUR"
 
-# Response: {"rates":{"EUR":0.146226622},"base":"BRL","date":"2021-03-02"}
+# Response: {"rates":{"USD: 1.097666},"base":"EUR","date":"2021-03-02"}
 ```
 
-Caso contrário, para ver o resultado da chamada acima, você pode ver o resultado diretamente no browser, basta digitar como url `https://api.exchangeratesapi.io/latest?symbols=USD&base=EUR`. Aproveite para testar a API, trocando os valores e observando o retorno, o site documenta diversas formas de utiliza-lá.
+Caso contrário, para ver o resultado da chamada acima, você pode ver o resultado diretamente no browser, basta digitar como url `https://api.exchangerate.host/latest?symbols=USD&base=EUR`.
+
+> Utilize uma extensão de visualização de arquivos JSON no chrome para uma melhor experiência. [exemplo:](https://chrome.google.com/webstore/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc)
+
+Aproveite para testar a API, trocando os valores e observando o retorno, o site documenta diversas formas de utiliza-lá.
 
 Contextualizando, no javascript podemos utilizar o [fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch) para receber estes valores (assim como fizemos acima) porém em nossa aplicação! Nosso objetivo agora é substituir em nossa aplicação o objeto `cotacoes` e trocá-lo por chamadas de API, por exemplo, o objeto:
 
 ```javascript
 const cotacaoBRL = {
-    "BRL": {
-        "EUR": 0.146226622,
-        "USD": 0.175881381,
-    },
-}
+  BRL: {
+    EUR: 0.198486,
+    USD: 0.217872,
+  },
+};
 ```
 
 é compatível com o resultado de:
 
 ```javascript
 const pegaTaxaDeConversao = async () => {
-    const cotacaoBRL = await fetch("https://api.exchangeratesapi.io/latest?symbols=USD,EUR&base=BRL")
-}
+  const cotacaoBRL = await fetch(
+    "https://api.exchangerate.host/latest?symbols=USD,EUR&base=BRL"
+  );
+};
 ```
 
 > É sugerido para este exercício que se utilize `async/await` bem como `arrow functions` para sua resolução. É bem provável que você vá encontrar exemplos utilizando outras sintaxes, caso isto traga dúvidas entre em contato pelos canais da PodCodar no discord.
