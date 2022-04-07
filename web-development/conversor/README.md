@@ -130,7 +130,7 @@ Caso você tenha um terminal com o programa `curl` instalado, pode copiar e exec
 
 curl "https://api.exchangerate.host/latest?symbols=USD&base=EUR"
 
-# Response: {"rates":{"USD: 1.097666},"base":"EUR","date":"2021-03-02"}
+# Response: {motd: {msg: "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",url: "https://exchangerate.host/#/donate" },success: true,base: "EUR",date: "2022-04-07",rates: {USD: 1.09052}}
 ```
 
 Caso contrário, para ver o resultado da chamada acima, você pode ver o resultado diretamente no browser, basta digitar como url `https://api.exchangerate.host/latest?symbols=USD&base=EUR`.
@@ -143,9 +143,10 @@ Contextualizando, no javascript podemos utilizar o [fetch](https://developer.moz
 
 ```javascript
 const cotacaoBRL = {
-  BRL: {
-    EUR: 0.198486,
-    USD: 0.217872,
+  base: "BRL",
+  rates: {
+    EUR: 0.19433,
+    USD: 0.211921,
   },
 };
 ```
