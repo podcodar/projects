@@ -130,7 +130,19 @@ Caso você tenha um terminal com o programa `curl` instalado, pode copiar e exec
 
 curl "https://api.exchangerate.host/latest?symbols=USD&base=EUR"
 
-# Response: {motd: {msg: "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",url: "https://exchangerate.host/#/donate" },success: true,base: "EUR",date: "2022-04-07",rates: {USD: 1.09052}}
+# Response: 
+{
+  motd: {
+    msg: "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    url: "https://exchangerate.host/#/donate" 
+  },
+  success: true,
+  base: "EUR",
+  date: "2022-04-07",
+  rates: {
+    USD: 1.09052
+  }
+}
 ```
 
 Caso contrário, para ver o resultado da chamada acima, você pode ver o resultado diretamente no browser, basta digitar como url `https://api.exchangerate.host/latest?symbols=USD&base=EUR`.
@@ -142,12 +154,19 @@ Aproveite para testar a API, trocando os valores e observando o retorno, o site 
 Contextualizando, no javascript podemos utilizar o [fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch) para receber estes valores (assim como fizemos acima) porém em nossa aplicação! Nosso objetivo agora é substituir em nossa aplicação o objeto `cotacoes` e trocá-lo por chamadas de API, por exemplo, o objeto:
 
 ```javascript
-const cotacaoBRL = {
-  base: "BRL",
+const cotacaoBRL = 
+{
+  motd: {
+    msg: "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    url: "https://exchangerate.host/#/donate" 
+  },
+  success: true,
+  base: "EUR",
+  date: "2022-04-07",
   rates: {
     EUR: 0.19433,
-    USD: 0.211921,
-  },
+    USD: 0.211921
+  }
 };
 ```
 
